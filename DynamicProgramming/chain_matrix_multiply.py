@@ -5,12 +5,13 @@ Minimizing Chain matrix Multiplication
 from sys import maxsize
 from pandas import DataFrame as df
 
+
 def chain_matrix_multiply(M: list, n: int):
     '''
     M: a list of matrix sizes to multiply
     n: the number of matrices to multiply
     '''
-    
+
     # Initialize a n*n matrix to all zeros
     # Create a list of n elements, each of which a list of n zeros
     C = [[0] * n for i in range(n)]
@@ -20,7 +21,7 @@ def chain_matrix_multiply(M: list, n: int):
     for s in range(1, n):
         print("S: " + str(s))
         for i in range(1, n - s):
-            j = i + s # Iterate to the next column
+            j = i + s  # Iterate to the next column
             print("i: " + str(i))
             print("s: " + str(s))
             print("j: " + str(j))
