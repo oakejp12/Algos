@@ -8,7 +8,7 @@ class Vertex:
         self.adjacent = {}
 
         # Set distance to INFINITY for all nodes
-        self.distance = sys.maxint
+        self.distance = sys.maxsize
 
         # Mark all nodes unvisited
         self.visited = False
@@ -16,7 +16,7 @@ class Vertex:
         # Predecessor
         self.previous = None
 
-    def add_neighbor(self, neighbor: Vertex, weight=0: int):
+    def add_neighbor(self, neighbor, weight=0):
         self.adjacent[neighbor] = weight
 
     def get_connections(self):
@@ -30,7 +30,7 @@ class Vertex:
 
     def set_distance(self, dist):
         self.distance = distance
-    
+
     def set_previous(self, previousNeighbor):
         self.previous = previousNeighbor
 
@@ -38,4 +38,4 @@ class Vertex:
         self.visited = True
 
     def __str__(self):
-        return str(self.id) + ' adjacent:' + str([x.id for x in self.adjacent]) 
+        return str(self.id) + ' adjacent:' + str([x for x in self.adjacent])
