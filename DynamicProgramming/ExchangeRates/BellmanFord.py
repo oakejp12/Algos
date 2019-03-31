@@ -8,6 +8,7 @@ of vertices V.
 from Graph import Graph
 from Vertex import Vertex
 import sys
+from config import root_logger
 
 
 class BellmanFord:
@@ -61,8 +62,8 @@ class BellmanFord:
 
                 for neighbor in neighbors:
                     index_j = list(V).index(neighbor)
-                    print("Inspect shortest path from " + vertex +
-                          " to " + neighbor)
+                    root_logger.debug("Inspect shortest path from " + vertex +
+                                      " to " + neighbor)
                     current_value = D[i][index_i]
                     possible_value = D[i - 1][index_j] + \
                         vertexNode.get_weight(neighbor)
@@ -73,7 +74,7 @@ class BellmanFord:
 
 
 if __name__ == "__main__":
-    print("Running main()")
+    root_logger.debug("Running main()")
 
     G = Graph()
     G.add_vertex("s")
@@ -92,4 +93,4 @@ if __name__ == "__main__":
 
     D = BellmanFord.shortest_pairs(G, "s")
 
-    print(D)
+    root_logger.debug(D)
