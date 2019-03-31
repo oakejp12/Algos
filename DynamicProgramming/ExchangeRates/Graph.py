@@ -1,11 +1,12 @@
 
 from Vertex import Vertex
+import collections
 
 
 class Graph:
 
     def __init__(self):
-        self.vertices = {}
+        self.vertices = collections.OrderedDict()
         self.num_vertices = 0
 
     def __iter__(self):
