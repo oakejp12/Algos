@@ -46,10 +46,10 @@ class Graph:
 
     def __str__(self):
         string = ""
-        V = set(self.get_vertices())
+        V = self.get_vertices()
         for node in V:
             vertex = self.get_vertex(node)
-            string = string + vertex.__str__() + '\n'
+            string = string + str(vertex) + "\n"
         return string
 
     @staticmethod
