@@ -61,7 +61,7 @@ class Graph:
 
         G_new = Graph()
 
-        V = set(G.get_vertices())
+        V = G.get_vertices()
 
         # For each vertex in G, we'll grab their neighbors
         # Add the neighbors as a new vertex (if they don't exist)
@@ -69,7 +69,7 @@ class Graph:
         # a neighbor to the neighbors
         for node in V:
             sourceVertex = G.get_vertex(node)
-            neighbors = set(sourceVertex.get_connections())
+            neighbors = sourceVertex.get_connections()
             for neighbor in neighbors:
                 if G_new.get_vertex(neighbor) is None:
                     G_new.add_vertex(neighbor)
