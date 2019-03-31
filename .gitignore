@@ -26,3 +26,6 @@ var/
 .cache
 nosetests.xml
 coverage.xml
+
+# Logging
+*.log
