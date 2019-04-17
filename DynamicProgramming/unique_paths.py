@@ -23,21 +23,7 @@ def unique_paths(m: int, n: int) -> int:
         for j in range(1, m):
             # Take the number of unique paths
             # from D[i][j - 1] and the number of
-            # unqiue paths from D[i - 1][j] and add them 
+            # unqiue paths from D[i - 1][j] and add them
             D[i][j] = D[i][j - 1] + D[i - 1][j]
 
     return D[-1][-1]
-
-
-if __name__ == "__main__":
-
-    m = 3
-    n = 2
-    output = 3
-
-    assert(unique_paths(m, n) == output)
-
-    m = 7
-    n = 3
-    output = 28
-    assert(unique_paths(m, n) == output)
